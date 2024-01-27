@@ -28,7 +28,7 @@ docker logs -f auto-imaotai
 
 ```shell
 # 根据所在地区搜索离你最近的门店
-curl --location 'http://uuu.huangbangjing.cn:30013/api/imaotai/shop/page?districtName=西湖区'
+curl --location 'http://localhost:30013/api/imaotai/shop/page?districtName=西湖区'
 ```
 
 2.前往PushPlus获取推送的token
@@ -36,14 +36,14 @@ curl --location 'http://uuu.huangbangjing.cn:30013/api/imaotai/shop/page?distric
 3.调用发送验证码接口
 
 ```shell
-curl --location 'http://uuu.huangbangjing.cn:30013/api/imaotai/user/code/你的手机号'
+curl --location 'http://localhost:30013/api/imaotai/user/code/你的手机号'
 # 接口返回数据是本次发送验证码前生成的设备id，需要保存下来，后续添加用户及预定时会用到
 ```
 
 4.调用添加用户接口
 
 ```shell
-curl --location 'http://uuu.huangbangjing.cn:30013/api/imaotai/user/addUser' \
+curl --location 'http://localhost:30013/api/imaotai/user/addUser' \
 --header 'Content-Type: application/json' \
 --data '{
     "mobile":"刚刚发送验证码的手机号",
