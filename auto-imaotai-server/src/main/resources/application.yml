@@ -1,0 +1,15 @@
+server:
+  port: 30013
+spring:
+  application:
+    name: auto-imaotai
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: ${MYSQL_URL}
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
+mybatis-plus:
+  type-aliases-package: com.beastmouth.auto.imaotai.mapper.entity.*
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

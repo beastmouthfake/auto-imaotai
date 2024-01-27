@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beastmouth.auto.imaotai.mapper.IMaoTaiItemMapper">
+    <insert id="batchInsert">
+        insert into i_maotai_item
+        (id, date_create, item_code, picture_v2, check_tag, title, picture, content, jumpUrl)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id}, #{item.dateCreate}, #{item.itemCode}, #{item.pictureV2}, #{item.checkTag}, #{item.title},
+            #{item.picture}, #{item.content}, #{item.jumpUrl})
+        </foreach>
+    </insert>
+</mapper>

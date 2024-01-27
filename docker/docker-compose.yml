@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mine-notify:
+    image: auto-imaotai:latest
+    container_name: auto-imaotai
+    restart: always
+    ports:
+      - 30013:30013
+    environment:
+      MYSQL_URL: your mysql url
+      MYSQL_USERNAME: your mysql username
+      MYSQL_PASSWORD: your mysql password
+    networks:
+      - local-network
+networks:
+  local-network:
+    external:
+      name: local-network

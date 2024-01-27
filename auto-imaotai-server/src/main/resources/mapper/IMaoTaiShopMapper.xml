@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beastmouth.auto.imaotai.mapper.IMaoTaiShopMapper">
+    <resultMap id="BaseResultMap" type="com.beastmouth.auto.imaotai.mapper.entity.IMaoTaiShopDO">
+        <!--@mbg.generated-->
+        <!--@Table i_maotai_shop-->
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="date_create" jdbcType="TIMESTAMP" property="dateCreate"/>
+        <result column="date_update" jdbcType="TIMESTAMP" property="dateUpdate"/>
+        <result column="date_delete" jdbcType="BIGINT" property="dateDelete"/>
+        <result column="shop_id" jdbcType="VARCHAR" property="shopId"/>
+        <result column="province" jdbcType="VARCHAR" property="province"/>
+        <result column="province_name" jdbcType="VARCHAR" property="provinceName"/>
+        <result column="city" jdbcType="VARCHAR" property="city"/>
+        <result column="city_name" jdbcType="VARCHAR" property="cityName"/>
+        <result column="district" jdbcType="VARCHAR" property="district"/>
+        <result column="district_name" jdbcType="VARCHAR" property="districtName"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="full_address" jdbcType="VARCHAR" property="fullAddress"/>
+        <result column="lat" jdbcType="VARCHAR" property="lat"/>
+        <result column="lng" jdbcType="VARCHAR" property="lng"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="tenant_name" jdbcType="VARCHAR" property="tenantName"/>
+        <result column="open_end_time" jdbcType="VARCHAR" property="openEndTime"/>
+        <result column="open_start_time" jdbcType="VARCHAR" property="openStartTime"/>
+        <result column="layaway" jdbcType="TINYINT" property="layaway"/>
+        <result column="tags" jdbcType="VARCHAR" property="tags"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, date_create, date_update, date_delete, shop_id, province, province_name, city,
+        city_name, district, district_name, address, full_address, lat, lng, `name`, tenant_name,
+        open_end_time, open_start_time, layaway, tags
+    </sql>
+    <update id="updateBatch" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update i_maotai_shop
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="date_create = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.dateCreate,jdbcType=TIMESTAMP}
+                </foreach>
+            </trim>
+            <trim prefix="date_update = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.dateUpdate,jdbcType=TIMESTAMP}
+                </foreach>
+            </trim>
+            <trim prefix="date_delete = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.dateDelete,jdbcType=BIGINT}
+                </foreach>
+            </trim>
+            <trim prefix="shop_id = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.shopId,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="province = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.province,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="province_name = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.provinceName,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="city = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.city,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="city_name = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.cityName,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="district = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.district,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="district_name = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.districtName,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="address = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.address,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="full_address = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.fullAddress,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="lat = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.lat,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="lng = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.lng,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="`name` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="tenant_name = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.tenantName,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="open_end_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.openEndTime,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="open_start_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.openStartTime,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+            <trim prefix="layaway = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.layaway,jdbcType=TINYINT}
+                </foreach>
+            </trim>
+            <trim prefix="tags = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    when id = #{item.id,jdbcType=BIGINT} then #{item.tags,jdbcType=VARCHAR}
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <update id="updateBatchSelective" parameterType="java.util.List">
+        <!--@mbg.generated-->
+        update i_maotai_shop
+        <trim prefix="set" suffixOverrides=",">
+            <trim prefix="date_create = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.dateCreate != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.dateCreate,jdbcType=TIMESTAMP}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="date_update = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.dateUpdate != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.dateUpdate,jdbcType=TIMESTAMP}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="date_delete = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.dateDelete != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.dateDelete,jdbcType=BIGINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="shop_id = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.shopId != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.shopId,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="province = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.province != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.province,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="province_name = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.provinceName != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.provinceName,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="city = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.city != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.city,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="city_name = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.cityName != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.cityName,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="district = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.district != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.district,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="district_name = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.districtName != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.districtName,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="address = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.address != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.address,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="full_address = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.fullAddress != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.fullAddress,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="lat = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.lat != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.lat,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="lng = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.lng != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.lng,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="`name` = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.name != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.name,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="tenant_name = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.tenantName != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.tenantName,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="open_end_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.openEndTime != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.openEndTime,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="open_start_time = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.openStartTime != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.openStartTime,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="layaway = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.layaway != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.layaway,jdbcType=TINYINT}
+                    </if>
+                </foreach>
+            </trim>
+            <trim prefix="tags = case" suffix="end,">
+                <foreach collection="list" index="index" item="item">
+                    <if test="item.tags != null">
+                        when id = #{item.id,jdbcType=BIGINT} then #{item.tags,jdbcType=VARCHAR}
+                    </if>
+                </foreach>
+            </trim>
+        </trim>
+        where id in
+        <foreach close=")" collection="list" item="item" open="(" separator=", ">
+            #{item.id,jdbcType=BIGINT}
+        </foreach>
+    </update>
+    <insert id="batchInsert" parameterType="map">
+        <!--@mbg.generated-->
+        insert into i_maotai_shop
+        (id, date_create, shop_id, province, province_name, city,
+        city_name, district, district_name, address, full_address, lat, lng, `name`, tenant_name,
+        open_end_time, open_start_time, layaway, tags)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id,jdbcType=BIGINT}, #{item.dateCreate,jdbcType=TIMESTAMP},
+            #{item.shopId,jdbcType=VARCHAR}, #{item.province,jdbcType=VARCHAR},
+            #{item.provinceName,jdbcType=VARCHAR}, #{item.city,jdbcType=VARCHAR}, #{item.cityName,jdbcType=VARCHAR},
+            #{item.district,jdbcType=VARCHAR}, #{item.districtName,jdbcType=VARCHAR}, #{item.address,jdbcType=VARCHAR},
+            #{item.fullAddress,jdbcType=VARCHAR}, #{item.lat,jdbcType=VARCHAR}, #{item.lng,jdbcType=VARCHAR},
+            #{item.name,jdbcType=VARCHAR}, #{item.tenantName,jdbcType=VARCHAR}, #{item.openEndTime,jdbcType=VARCHAR},
+            #{item.openStartTime,jdbcType=VARCHAR}, #{item.layaway,jdbcType=TINYINT}, #{item.tags,jdbcType=VARCHAR}
+            )
+        </foreach>
+    </insert>
+</mapper>
